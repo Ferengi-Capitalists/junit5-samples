@@ -45,11 +45,20 @@ class CalculatorTests
 	}
 
 	@Test
-	@DisplayName("Test Subtract")
+	@DisplayName("Test 1 Subtract")
 	
 	void subtractTwoNumbers() 
 	{
 		Calculator calculator = new Calculator();
 		assertEquals(1, calculator.sub(2, 1), "2 - 1 should equal 1");
+	}
+
+	@Test
+	@DisplayName("Test 2 Subtract")
+	
+	void subtractTwoNumbers() 
+	{
+		Calculator calculator = new Calculator();
+		assertEquals(2, calculator.sub(3, 1), "3 - 1 should equal 2");
 	}
 }
