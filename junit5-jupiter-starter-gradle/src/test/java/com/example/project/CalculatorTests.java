@@ -26,6 +26,20 @@ class CalculatorTests {
 		assertEquals(2, calculator.add(1, 1), "1 + 1 should equal 2");
 	}
 
+	@Test
+	@DisplayName("91 - 23 = 68")
+	void subsTwoNumbers() {
+		Calculator calculator = new Calculator();
+		assertEquals(68, calculator.sub(91, 23), "91 - 23 should equal 68");
+	}
+
+	@Test
+	@DisplayName("64 - 55 = 9")
+	void subtractsTwoNumbers() {
+		Calculator calculator = new Calculator();
+		assertEquals(9, calculator.sub(64, 55), "64 - 55 should equal 9");
+	}
+
 	@ParameterizedTest(name = "{0} + {1} = {2}")
 	@CsvSource({
 			"0,    1,   1",
