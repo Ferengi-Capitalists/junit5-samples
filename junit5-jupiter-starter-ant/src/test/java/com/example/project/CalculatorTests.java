@@ -40,20 +40,22 @@ class CalculatorTests {
 	}
 
 	@Test
-	@DisplayName("Test 1 Subtract")
-	
-	void subtractTwoNumbers() 
-	{
+	@DisplayName("1 - 1 = 0")
+	void subsTwoNumbers() {
 		Calculator calculator = new Calculator();
-		assertEquals(1, calculator.sub(2, 1), "2 - 1 should equal 1");
+		assertEquals(0, calculator.sub(1, 1), "1 - 1 should equal 0");
 	}
 
-	@Test
-	@DisplayName("Test 2 Subtract")
-	
-	void subtractTwoNumbers() 
-	{
+	@ParameterizedTest(name = "{0} - {1} = {2}")
+	@CsvSource({
+			"1,    1,   0",
+			"2,    1,   1",
+			"51,  49, 2",
+			"100,  1, 99"
+	})
+	void sub(int first, int second, int expectedResult) {
 		Calculator calculator = new Calculator();
-		assertEquals(2, calculator.sub(3, 1), "3 - 1 should equal 2");
-	}
+		assertEquals(expectedResult, calculator.sub(first, second),
+				() -> first + " - " + second + " should equal " + expectedResult);
+}
 }
