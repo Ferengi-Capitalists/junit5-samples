@@ -48,8 +48,8 @@ class CalculatorTests {
 
 	@ParameterizedTest(name = "{0} - {1} = {2}")
 	@CsvSource({
-			"1,    1,   0",
-			"2,    1,   1",
+			"11,    1,   10",
+			"4,    3,   1",
 			"22,  49, -27",
 			"77,  11, 66"
 	})
