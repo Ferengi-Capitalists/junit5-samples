@@ -38,4 +38,25 @@ class CalculatorTests {
 		assertEquals(expectedResult, calculator.add(first, second),
 				() -> first + " + " + second + " should equal " + expectedResult);
 	}
+
+	@Test
+	@DisplayName("1 - 1 = 0")
+	void subsTwoNumbers() {
+		Calculator calculator = new Calculator();
+		assertEquals(0, calculator.sub(1, 1), "1 - 1 should equal 0");
+	}
+
+	@ParameterizedTest(name = "{0} - {1} = {2}")
+	@CsvSource({
+			"1,    1,   0",
+			"2,    1,   1",
+			"22,  49, -27",
+			"77,  11, 66"
+	})
+
+	void sub(int first, int second, int expectedResult) {
+		Calculator calculator = new Calculator();
+		assertEquals(expectedResult, calculator.sub(first, second),
+				() -> first + " - " + second + " should equal " + expectedResult);
+	}
 }

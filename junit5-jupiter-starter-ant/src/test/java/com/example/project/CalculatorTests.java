@@ -53,9 +53,10 @@ class CalculatorTests {
 			"51,  49, 2",
 			"100,  1, 99"
 	})
+
 	void sub(int first, int second, int expectedResult) {
 		Calculator calculator = new Calculator();
 		assertEquals(expectedResult, calculator.sub(first, second),
 				() -> first + " - " + second + " should equal " + expectedResult);
-}
+	}
 }
